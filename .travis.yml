@@ -1,0 +1,42 @@
+language: c
+
+sudo: true
+
+env:
+  global:
+    - LUAROCKS=2.2.0
+  matrix:
+    - LUA=lua5.1
+    # - LUA=lua5.2
+    # - LUA=lua5.3
+    # - LUA=luajit
+
+branches:
+  only:
+    - master
+
+before_install:
+  # required sudo
+  - bash .travis/setup_ftp.sh
+  - bash .travis/setup_uv.sh
+  - source .travis/setenv_lua.sh
+  - luarocks install vararg-lua
+
+install:
+  - luarocks make rockspecs/lluv-memcached-scm-0.rockspec UV_DIR=$TRAVIS_BUILD_DIR/libuv
+
+before_script:
+  - luarocks install luacov-coveralls
+  - luarocks install ltn12 --from=https://rocks.moonscript.org/dev
+
+script:
+  - cd test
+  - lua -lluacov ftp_self_test.lua
+
+after_success:
+  - luacov-coveralls -v
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
