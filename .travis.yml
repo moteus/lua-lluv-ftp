@@ -23,11 +23,11 @@ before_install:
   - luarocks install vararg-lua
 
 install:
-  - luarocks make rockspecs/lluv-memcached-scm-0.rockspec UV_DIR=$TRAVIS_BUILD_DIR/libuv
+  - luarocks make rockspecs/lluv-ftp-scm-0.rockspec UV_DIR=$TRAVIS_BUILD_DIR/libuv
 
 before_script:
   - luarocks install luacov-coveralls
-  - luarocks install ltn12 --from=https://rocks.moonscript.org/dev
+  - luarocks install ltn12 --from=https://luarocks.org/dev
 
 script:
   - cd test
