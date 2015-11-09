@@ -31,7 +31,7 @@ before_script:
 
 script:
   - cd test
-  - lua -lluacov ftp_self_test.lua
+  - lua -lluacov -e"require'lluv.ftp'.self_test('127.0.0.1', 'moteus', '123456')"
 
 after_success:
   - luacov-coveralls -v
