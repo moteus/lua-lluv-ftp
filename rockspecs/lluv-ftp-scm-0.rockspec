@@ -7,7 +7,7 @@ source = {
 }
 
 description = {
-  summary    = "Memcached client for lua-lluv library",
+  summary    = "FTP client for lluv library",
   homepage   = "https://github.com/moteus/lua-lluv-ftp",
   license    = "MIT/X11",
   maintainer = "Alexey Melnichuk",
