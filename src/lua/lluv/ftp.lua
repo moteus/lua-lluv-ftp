@@ -2,7 +2,7 @@
 --
 --  Author: Alexey Melnichuk <alexeymelnichuck@gmail.com>
 --
---  Copyright (C) 2014-2015 Alexey Melnichuk <alexeymelnichuck@gmail.com>
+--  Copyright (C) 2014-2016 Alexey Melnichuk <alexeymelnichuck@gmail.com>
 --
 --  Licensed according to the included 'LICENSE' document
 --
@@ -26,8 +26,6 @@
 --     assert(not err, tostring(err))
 --   end)
 -- end)
-
-_VERSION = "0.1.0-dev"
 
 local uv = require "lluv"
 local ut = require "lluv.utils"
@@ -1147,7 +1145,11 @@ local function self_test(server, user, pass, verbose)
 end
 
 return {
-  _VERSION   = _VERSION;
+  _NAME      = "lluv-ftp";
+  _VERSION   = "0.1.0";
+  _COPYRIGHT = "Copyright (C) 2015-2016 Alexey Melnichuk";
+  _LICENSE   = "MIT";
+
   Connection = Connection;
   self_test  = self_test;
 }
