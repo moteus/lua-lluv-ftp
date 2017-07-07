@@ -1,11 +1,11 @@
 # lua-lluv-ftp
-==============
 [![Licence](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/moteus/lua-lluv-ftp.svg?branch=master)](https://travis-ci.org/moteus/lua-lluv-ftp)
 [![Coverage Status](https://coveralls.io/repos/github/moteus/lua-lluv-ftp/badge.svg?branch=master)](https://coveralls.io/github/moteus/lua-lluv-ftp?branch=master)
 
 ## FTP client for lluv library
 
+### Usage
 ```Lua
   local FTP = requrie "lluv.ftp"
 
